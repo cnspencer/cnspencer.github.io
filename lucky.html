@@ -1,10 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cooper Fan Site</title>
+<title>Cooper & Friends Fan Site</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.min.css">
+    
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative; 
+  }
+.loader {
+  border: 16px solid #000001;
+  border-radius: 50%;
+  border-top: 16px solid purple;
+  border-right: 16px solid purple;
+  border-bottom: 16px solid darkgray;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.navbar {
+      margin-bottom: 0;
+      background-color: #262626;
+      border: 0;
+      font-size: 11px;
+      letter-spacing: 4px;
+      opacity: 0.9;
+}
+.nav-tabs li a, .navbar .navbar-brand {
+      color: green;
+}
+.navbar-nav li a:hover {
+    color: #110000;
+}
+.navbar-nav li.active a {
+    color: #fff;
+    background-color: #29292c;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.open .dropdown-toggle {
+    color: #fff;
+    background-color: #555;
+}
+.dropdown-menu li a {
+    color: #000;
+}
+.dropdown-menu li a:hover {
+    background-color: #666666;
+}
+body {
+	background-color:#480080;
+}
+h1 {
+	padding: 125px;	
+	font-size:300%;
+	color:white;
+	text-align:center;
+	background-color:#000000;
+	font-family:courier;
+}
+h2 {
+	font-family:timesnewroman;
+	color:red;
+	text-align:center;
+}
+h3 {
+	font-family:timesnewroman;
+	color:lightgray;
+	font-size:130%;
+}
+h4 {
+	font-family:timesnewroman;
+	color:lightgray;
+	font-size:130%;
+}
+h5 {
+	font-family:timesnewroman;
+	color:lightgray;
+	font-size:150%;
+}
+p {
+	font-family:serif;
+	color:lightgray;
+footer {
+    background-color: #2b004d;
+    color: #2b004d;
+    padding: 32px;
+}
+footer a {
+    color: #2b004d;
+}
+</style>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -17,18 +121,21 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.html">Cooper's Home</a></li>
+	<li><a href="misty.html">Misty's Home</a></li>
+        <li><a href="bud.html">Buddy's Home</a></li>
+        <li><a href="shadow.html">Shadow's Home</a></li>
+        <li><a href="oreo.html">Oreo's Home</a></li>
+        <li><a href="jup.html">Jupiter's Home</a></li>
+        <li><a href="lucky.html">Lucky's Home</a></li>
+        <li><a href="snickers.html">Snickers' Home</a></li>
+        <li><a href="cookie.hmtl">Cookie's Home</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-             <li><a href="misty.html">Misty's Home</a></li>
-             <li><a href="bud.html">Buddy's Home</a></li>
-             <li><a href="shadow.html">Shadow's Home</a></li>
-             <li><a href="oreo.html">Oreo's Home</a></li>
-             <li><a href="jup.html">Jupiter's Home</a></li>
-             <li><a href="lucky.html">Lucky's Home</a></li>
-             <li><a href="snickers.html">Snickers' Home</a></li>
-             <li><a href="cookie.html">Cookie's Home</a></li>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="dragonhead.html">Dragon Head Hood Ornaments Ltd.</a></li>
+            <li><a href="logs/httpd/access_log">Logs [Devs Only](Link Broken)</a></li>
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
@@ -36,133 +143,45 @@
     </div>
   </div>
 </nav>
-<style>
-.loader {
-  border: 16px solid #000001;
-  border-radius: 50%;
-  border-top: 16px solid purple;
-  border-right: 16px solid purple;
-  border-bottom: 16px solid darkgray;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.navbar {
-      margin-bottom: 0;
-      background-color: red;
-      border: 0;
-      font-size: 11px;
-      letter-spacing: 4px;
-      opacity: 0.9;
-}
-
-.nav-tabs li a, .navbar .navbar-brand {
-      color: green;
-}
-
-.navbar-nav li a:hover {
-    color: #110000;
-}
-
-.navbar-nav li.active a {
-    color: #fff;
-    background-color: #29292c;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-}
-
-.open .dropdown-toggle {
-    color: #fff;
-    background-color: #555;
-}
-
-.dropdown-menu li a {
-    color: #000;
-}
-
-.dropdown-menu li a:hover {
-    background-color: red;
-}
-
-body {
-	background-color:#480080;
-}
-
-h1 {
-	font-size:300%;
-	color:red;
-	text-align:center;
-	background-color:#eb9114;
-	font-family:courier;
-}
-
-h2 {
-	font-family:timesnewroman;
-	color:red;
-	text-align:center;
-}
-
-h3 {
-	font-family:timesnewroman;
-	color:lightgray;
-	font-size:130%;
-}
-
-h4 {
-	font-family:timesnewroman;
-	color:lightgray;
-	font-size:130%;
-}
-
-h5 {
-	font-family:timesnewroman;
-	color:lightgray;
-	font-size:150%;
-}
-
-p {
-	font-family:serif;
-	color:lightgray;
-
-footer {
-    background-color: #2b004d;
-    color: #2b004d;
-    padding: 32px;
-}
-
-footer a {
-    color: #2b004d;
-}
-</style>
-
-<h1></h1>
+<h1>Lucky</h1>
 <hr>
-<h2>The official memorial page of .</h2>
-<img src=".jpg" height="200">
-<img src=".jpg" height="200">
-<img src=".jpg" height="200">
-<img src=".jpg" height="200">
-<img src=".jpg" height="200">
-<h3>About :</h3>
-<p></p>
-<h4>Movies</h4>
-<p></p>
+<h2>The official memorial page of Lucky.</h2>
+<img src="luc1.jpg" height="200">
+<img src="luc2.jpg" height="200">
+<img src="luc3.jpg" height="200">
+<img src="luc4.jpg" height="200">
+<h3>About Lucky:</h3>
+<p>He was born to his adopted family's cousins' cat, Kitty Witty, and narrowly escaped a dog who killed the rest of his siblings, hence his name, Lucky. Once weened, he was given to his owner and lived with her for a number of years.</p>
 <h5>Fun Facts:</h5>
-<p></p>
+<p>.</p>
+<p>.</p>
 
 <footer class="text-right">
   <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
@@ -177,6 +196,5 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 })
 </script>
-
 </body>
 </html>
