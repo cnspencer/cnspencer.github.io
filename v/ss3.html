@@ -1,19 +1,19 @@
 <!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/*Hydralisk*/
 * {box-sizing:border-box}
-body {font-family: serif;margin:0}
-
+body {font-family: Verdana,sans-serif;margin:0}
 .mySlides {display:none}
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 480px;
-  position: absolute;
+  position: relative;
   margin: auto;
 }
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -28,15 +28,18 @@ body {font-family: serif;margin:0}
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
+
 /* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
+
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
 /* Caption text */
 .text {
   color: #f2f2f2;
@@ -47,6 +50,7 @@ body {font-family: serif;margin:0}
   width: 100%;
   text-align: center;
 }
+
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
@@ -55,27 +59,33 @@ body {font-family: serif;margin:0}
   position: absolute;
   top: 0;
 }
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 </style>
 </head>
 <body>
+
 <div class="slideshow-container">
 
-<div class="mySlides4 fade">
+<div class="mySlides">
   <div class="numbertext">1 / 3</div>
   <img src="Hydralisk.jpg" style="width:100%">
-  <div class="text">Finished Hydralisk virtual model 2017</div>
+  <div class="text" style="background-color:#696969;">Finished Hydralisk virtual model 2017</div>
 </div>
 
-<div class="mySlides4 fade">
+<div class="mySlides">
   <div class="numbertext">2 / 3</div>
   <img src="Hydralisk Victory.jpg" style="width:100%">
-  <div class="text">Reference<div>
+  <div class="text" style="background-color:#696969;">Reference</div>
 </div>
 
-<div class="mySlides4 fade">
+<div class="mySlides">
   <div class="numbertext">3 / 3</div>
   <img src="IMG_20170114_111112_554.jpg" style="width:100%">
-  <div class="text">3D printed model</div>
+  <div class="text" style="background-color:#696969;">3D printed model</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -87,12 +97,15 @@ body {font-family: serif;margin:0}
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
+
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
+
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
+
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -101,10 +114,9 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.display = "block";  
 }
-</script>	
+</script>
 
-</div>
 </body>
-</html>
+</html> 
