@@ -2065,6 +2065,9 @@ audio {
           </ul>
         </li>
       </ul>
+<ul class="nav navbar-nav navbar-right">
+  <p class="navbar-text">NOTE: This website's sections are not organized in any particular order.</p>
+    </ul>
     </div>
   </div>
 </nav>
@@ -2919,40 +2922,6 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-
-<img id="myImg23" src="v/cooper.PNG" alt="Clip of Cooper & Friends portrait 2016" width="420">
-<!-- The Modal -->
-<div id="myModal23" class="modal">
-<!-- The Close Button -->
-  <span class="close" onclick="document.getElementById('myModal23').style.display='none'">&times;</span>
-<!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img023">
-<!-- Modal Caption (Image Text) -->
-  <div id="caption23"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal23');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg23');
-var modalImg = document.getElementById("img023");
-var captionText = document.getElementById("caption23");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>	
 	
 	
 	
