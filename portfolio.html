@@ -1916,8 +1916,85 @@ li a:hover:not(.active) {
     text-decoration: none;
     cursor: pointer;
 }
-
 	
+#myImg24 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg24:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 45px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 
 /*River Scene*/
 * {box-sizing:border-box}
@@ -2101,6 +2178,41 @@ $(document).ready(function(){
 <p style="color:#00226c;">Click an icon to see its full resolution and a brief description.<br></p>
 <p>.</p>
 
+<img id="myImg24" src="v/DDDLogo2.jpg" alt="Icon for personal food blog (<a href="https://sites.google.com/aggiemail.usu.edu/dragon-den-dinners/">Dragon Den Dinners</a>) 2018" width="300">
+<!-- The Modal -->
+<div id="myModal24" class="modal">
+<!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal24').style.display='none'">&times;</span>
+<!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img24">
+<!-- Modal Caption (Image Text) -->
+  <div id="caption24"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal24');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg24');
+var modalImg = document.getElementById("img24");
+var captionText = document.getElementById("caption24");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
+	
 <img id="myImg" src="v/BF1.png" alt="Big Frog Enterprises Logo (3rd Rendition) 2017" width="237">
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -2928,9 +3040,9 @@ span.onclick = function() {
 
 <p style="color:#00226c; font-size:28px;">End of Report (Short Story) 2016</p>
 <iframe src="v/End of Report.txt" width="540px" height="720px"></iframe>
-<br>
+<!-- <br>
 <p style="color:#00226c; font-size:28px;">Sampler of Joan Delwark's Adventures 2016-2017</p>
-<iframe src="v/Sampler of Joan Delwark's Adventures.pdf" width="540px" height="720px"></iframe>
+<iframe src="v/Sampler of Joan Delwark's Adventures.pdf" width="540px" height="720px"></iframe> -->
 	
 
 
